@@ -1,0 +1,10 @@
+{
+  "name": "FoodBridge",
+  "short_name": "FoodBridge",
+  "description": "Connect surplus food donors with food-relief organisations.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6faf7",
+  "theme_color": "#146c52",
+  "icons": []
+}

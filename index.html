@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#146c52">
+  <meta name="description" content="FoodBridge connects surplus food donors with registered food-relief organisations.">
+  <title>FoodBridge | Share Food, Spread Hope</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="brandHome"><span class="brand-mark">F</span><span>FoodBridge<small>Share food. Spread hope.</small></span></a>
+    <div class="top-actions">
+      <span id="roleBadge" class="role-badge hidden"></span>
+      <button id="logoutBtn" class="btn btn-outline hidden">Log out</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="authView" class="auth-layout">
+      <div class="hero">
+        <span class="eyebrow">A little food can make a big difference</span>
+        <h1>Good food deserves<br><em>a second chance.</em></h1>
+        <p>FoodBridge helps restaurants, communities and food-relief organisations connect so surplus edible food can reach people who need it.</p>
+        <div class="hero-stats">
+          <div><strong id="heroDonationCount">0</strong><span>donations listed</span></div>
+          <div><strong id="heroMealCount">0</strong><span>estimated meals</span></div>
+        </div>
+        <p class="notice">College demonstration prototype. Use only food that has been assessed and handled safely.</p>
+      </div>
+      <div class="auth-card">
+        <div class="tabs">
+          <button class="tab active" data-tab="login">Log in</button>
+          <button class="tab" data-tab="register">Create account</button>
+        </div>
+        <form id="loginForm" class="auth-form">
+          <h2>Welcome back</h2>
+          <label>Email<input name="email" type="email" placeholder="you@example.com" required></label>
+          <label>Password<input name="password" type="password" placeholder="Enter password" required></label>
+          <button class="btn btn-primary full" type="submit">Log in</button>
+          <p class="form-hint">Demo admin: admin@foodbridge.demo / Admin123!</p>
+          <p class="form-hint">Create a donor or NGO account in the registration tab to try the other roles.</p>
+        </form>
+        <form id="registerForm" class="auth-form hidden">
+          <h2>Join FoodBridge</h2>
+          <label>Full name / Organisation<input name="name" placeholder="Your name or organisation" required maxlength="70"></label>
+          <label>Email<input name="email" type="email" placeholder="you@example.com" required></label>
+          <label>Password<input name="password" type="password" minlength="6" placeholder="At least 6 characters" required></label>
+          <label>I am registering as
+            <select name="role" required>
+              <option value="donor">Food donor</option>
+              <option value="ngo">NGO / food-relief organisation</option>
+            </select>
+          </label>
+          <label>Phone number<input name="phone" type="tel" placeholder="Contact number" required></label>
+          <label>Area / city<input name="location" placeholder="e.g. Bengaluru, Indiranagar" required></label>
+          <button class="btn btn-primary full" type="submit">Create account</button>
+          <p class="form-hint">For this prototype, account details stay in this browser only.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="appView" class="hidden">
+      <div class="welcome-row">
+        <div><span class="eyebrow" id="dashboardEyebrow">YOUR FOODBRIDGE</span><h1 id="welcomeTitle">Dashboard</h1><p id="welcomeSubtitle">Here is what's happening today.</p></div>
+        <div id="welcomeAction"></div>
+      </div>
+      <div id="statsGrid" class="stats-grid"></div>
+      <div id="dashboardContent"></div>
+    </section>
+  </main>
+
+  <footer><span>FoodBridge · College IDT project prototype</span><span>Donate responsibly · Verify food safety before collection</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
